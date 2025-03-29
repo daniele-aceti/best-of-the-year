@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Greeting</title>
+  </head>
+  <body>
+    <h1>Canzoni</h1>
+    <div>
+      <ul>
+        <li th:each="s : ${song}" th:text="|${s.titolo} - ${s.id}|" ></li>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
