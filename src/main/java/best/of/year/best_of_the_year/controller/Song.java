@@ -6,8 +6,8 @@ public class Song {
 
     private String id;
 
-    public Song(){
-        
+    public Song() {
+
     }
 
     public Song(String titolo, String id) {

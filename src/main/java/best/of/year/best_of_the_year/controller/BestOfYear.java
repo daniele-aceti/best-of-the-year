@@ -15,8 +15,8 @@ public class BestOfYear {
 
     private List<Movie> getBestMovies() {
         Movie RitornoAlFuturo = new Movie("Ritorno al futuro", "654321");
-        Movie RitornoAlFuturoII = new Movie("Ritorno al futuro", "102531");
-        Movie RitornoAlFuturoIII = new Movie("Ritorno al futuro", "123456");
+        Movie RitornoAlFuturoII = new Movie("Ritorno al futuroII", "102531");
+        Movie RitornoAlFuturoIII = new Movie("Ritorno al futuroIII", "123456");
         List<Movie> listaFilm = new ArrayList<>();
         listaFilm.add(RitornoAlFuturo);
         listaFilm.add(RitornoAlFuturoII);
@@ -46,6 +46,13 @@ public class BestOfYear {
     public String bestMovies(Model model) {
         List<Movie> films = getBestMovies();
         model.addAttribute("film", films);
+        //PARTE1
+        /*  String film = "";
+        for(Movie f : films ){
+            film += f.getTitolo() + ", ";
+        }
+        film = film.substring(0, film.length()-2);
+        model.addAttribute("filmFormat", film); */
         return "movies";
     }
 
@@ -53,31 +60,37 @@ public class BestOfYear {
     public String bestSongs(Model model) {
         List<Song> songs = getBestSongs();
         model.addAttribute("song", songs);
+
+        //PARTE1
+        /*     String canzoni = "";
+        for(Song c : songs ){
+            canzoni += c.getTitolo() + ", ";
+        }
+        canzoni = canzoni.substring(0, canzoni.length()-2);
+        model.addAttribute("canzoniFormat", canzoni); */
         return "songs";
     }
 
     @GetMapping("/songID")
-    public String songID(@RequestParam (name= "id") String id, Model model) {
+    public String songID(@RequestParam(name = "id") String id, Model model) {
         List<Song> song = getBestSongs();
-        for(Song canzoni : song){
-            if(canzoni.getId().equals(id)){
+        for (Song canzoni : song) {
+            if (canzoni.getId().equals(id)) {
                 model.addAttribute("song", canzoni);
-            }    
+            }
         }
         return "cercaCanzone";
     }
 
     @GetMapping("/filmID")
-    public String filmID(@RequestParam (name= "id") String id, Model model) {
+    public String filmID(@RequestParam(name = "id") String id, Model model) {
         List<Movie> movie = getBestMovies();
-        for(Movie film : movie){
-            if(film.getId().equals(id)){
+        for (Movie film : movie) {
+            if (film.getId().equals(id)) {
                 model.addAttribute("film", film);
-            }    
+            }
         }
         return "cercaFilm";
     }
-    
-    
 
 }

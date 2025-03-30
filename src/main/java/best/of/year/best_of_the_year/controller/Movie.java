@@ -1,17 +1,16 @@
 package best.of.year.best_of_the_year.controller;
 
-
 public class Movie {
 
     private String titolo;
 
     private String id;
 
-    public Movie(){
-        
+    public Movie() {
+
     }
 
-    public Movie(String titolo, String id){
+    public Movie(String titolo, String id) {
         this.titolo = titolo;
         this.id = id;
     }
@@ -31,6 +30,5 @@ public class Movie {
     public void setId(String id) {
         this.id = id;
     }
-
 
 }

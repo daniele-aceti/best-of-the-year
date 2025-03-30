@@ -2,10 +2,15 @@
 <html xmlns:th="http://www.thymeleaf.org">
   <head>
     <title>Best</title>
+    <div th:replace="fragments :: bootstrapCss"></div> 
   </head>
   <body>
     <div>
       <h1 th:text="|Best of year ${name}|" />
     </div>
+    <div><a th:href="@{http://localhost:8080/songs}">Canzoni</a></div>
+    <br>
+    <div> <a th:href="@{http://localhost:8080/movies}">Film</a></div>
+    <div th:replace="fragments :: bootstrapJs"></div>
   </body>
 </html>

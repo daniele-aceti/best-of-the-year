@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
   <head>
+    <div th:replace="fragments :: bootstrapCss"></div> 
     <title>Film</title>
   </head>
+  <div th:replace="fragments :: navbar"></div>
   <body>
     <h1>Film</h1>
-    <div>
-      <ul>
-        <li th:each="s : ${film}" th:text="|${s.titolo} - ${s.id}|" ></li>
-        </li>
-      </ul>
-    </div>
+    <ul>
+      <li th:each="s : ${film}">
+        <a th:href="@{/movies/{id}(id=${s.id})}" th:text="|${s.titolo} - ${s.id}|"></a>
+      </li>
+    </ul>
+    <!-- PARTE 1 -->
+    <!-- <div>
+      <div th:text="${filmFormat}">
+    </div> -->
+    <div th:replace="fragments :: bootstrapJs"></div>
   </body>
 </html>
