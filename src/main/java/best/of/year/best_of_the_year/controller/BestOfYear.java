@@ -60,7 +60,7 @@ public class BestOfYear {
     public String bestSongs(Model model) {
         List<Song> songs = getBestSongs();
         model.addAttribute("song", songs);
-
+        model.addAttribute("controlloSong", true);
         //PARTE1
         /*     String canzoni = "";
         for(Song c : songs ){
