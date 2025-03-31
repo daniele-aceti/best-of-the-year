@@ -6,13 +6,12 @@
   </head>
   <div th:replace="fragments :: navbar"></div>
   <body>
-    <h1>Canzoni</h1>
+    <h1 class="text-center">Canzoni</h1>
     <!-- PARTE1 -->
     <!-- <div th:text="${canzoniFormat}"> 
     </div> -->
     <div th:insert="fragments :: table-head">
       <div th:replace="fragments :: table-body"></div>
-      <!--   <td th:each="s : ${song}" th:text="|${s.titolo} - ${s.id}|"></td> --> 
     </div>
     <div th:replace="fragments :: bootstrapJs"></div>
   </body>

@@ -6,14 +6,9 @@
   </head>
   <div th:replace="fragments :: navbar"></div>
   <body>
-    <h1>Film</h1>
+    <h1 class="text-center">Film</h1>
     <div th:insert="fragments :: table-head">
       <div th:replace="fragments :: table-body"></div>
-<!--     <ul>
-      <li th:each="s : ${film}">
-        <a th:href="@{/movies/{id}(id=${s.id})}" th:text="|${s.titolo} - ${s.id}|"></a>
-      </li>
-    </ul> -->
     <!-- PARTE 1 -->
     <!-- <div>
       <div th:text="${filmFormat}">
