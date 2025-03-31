@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -71,8 +72,8 @@ public class BestOfYear {
         return "songs";
     }
 
-    @GetMapping("/songID")
-    public String songID(@RequestParam(name = "id") String id, Model model) {
+    @GetMapping("/songs/{id}")
+    public String songID(@PathVariable("id") String id, Model model) {
         List<Song> song = getBestSongs();
         for (Song canzoni : song) {
             if (canzoni.getId().equals(id)) {
@@ -82,8 +83,8 @@ public class BestOfYear {
         return "cercaCanzone";
     }
 
-    @GetMapping("/filmID")
-    public String filmID(@RequestParam(name = "id") String id, Model model) {
+    @GetMapping("/movies/{id}")
+    public String filmID(@PathVariable("id") String id, Model model) {
         List<Movie> movie = getBestMovies();
         for (Movie film : movie) {
             if (film.getId().equals(id)) {

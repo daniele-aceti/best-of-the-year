@@ -2,11 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
   <head>
     <title>Film</title>
+    <div th:replace="fragments :: bootstrapCss"></div>
   </head>
+    <div th:replace="fragments :: navbar"></div>
   <body>
-    <h1>FIlm</h1>
+    <h1 class="text-center">FIlm</h1>
     <div>
-      <p th:text="|Il film che stai cercando è: ${film.titolo}"></p>
+      <p class="text-center" th:text="|Il film che stai cercando è: ${film.titolo}"></p>
     </div>
+    <div th:replace="fragments :: bootstrapJs"></div>
   </body>
 </html>

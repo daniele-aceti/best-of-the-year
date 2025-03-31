@@ -2,11 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
   <head>
     <title>Canzoni</title>
+    <div th:replace="fragments :: bootstrapCss"></div>
   </head>
+    <div th:replace="fragments :: navbar"></div>
   <body>
-    <h1>Canzoni</h1>
+    <h1 class="text-center">Canzoni</h1>
     <div>
-      <p th:text="|La canzone che stai cercando è: ${song.titolo}"></p>
+      <p class="text-center" th:text="|La canzone che stai cercando è: ${song.titolo}"></p>
     </div>
+    <div th:replace="fragments :: bootstrapJs"></div>
   </body>
 </html>
