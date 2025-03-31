@@ -72,10 +72,16 @@
             <tbody th:each="s : ${song}">
               <tr>
                 <td scope="col">
-                  <a th:href="@{/songs/{id}(id=${s.id})}" th:text="| ${s.id}|"></a>
+                  <a
+                    th:href="@{/songs/{id}(id=${s.id})}"
+                    th:text="| ${s.id}|"
+                  ></a>
                 </td>
                 <td>
-                  <a th:href="@{/songs/{id}(id=${s.id})}" th:text="|${s.titolo}|"></a>
+                  <a
+                    th:href="@{/songs/{id}(id=${s.id})}"
+                    th:text="|${s.titolo}|"
+                  ></a>
                 </td>
               </tr>
             </tbody>
@@ -84,10 +90,16 @@
             <tbody th:each="s : ${film}">
               <tr>
                 <td scope="col">
-                  <a th:href="@{/movies/{id}(id=${s.id})}" th:text="| ${s.id}|"></a>
+                  <a
+                    th:href="@{/movies/{id}(id=${s.id})}"
+                    th:text="| ${s.id}|"
+                  ></a>
                 </td>
                 <td>
-                  <a th:href="@{/movies/{id}(id=${s.id})}" th:text="|${s.titolo}|"></a>
+                  <a
+                    th:href="@{/movies/{id}(id=${s.id})}"
+                    th:text="|${s.titolo}|"
+                  ></a>
                 </td>
               </tr>
             </tbody>
